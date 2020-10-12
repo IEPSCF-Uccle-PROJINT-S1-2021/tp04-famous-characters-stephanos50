@@ -97,11 +97,18 @@ function listetrier(){
           listetrier();
 
           /* On affiche  */
-          for(let i = 0; i < concatenerJson.length; ++i){
-            let table = document.createElement('li');
-            table.textContent = concatenerJson[i].firstName + " "  + concatenerJson[i].lastName;
+          if(concatenerJson.length === 0){
+            let table = document.createElement('p');
+            table.textContent = "Pas de résultas";
             document.body.appendChild(table);
+          } else {
+              for(let i = 0; i < concatenerJson.length; ++i){
+              let table = document.createElement('li');
+              table.textContent = concatenerJson[i].firstName + " "  + concatenerJson[i].lastName;
+              document.body.appendChild(table);
+            }
           }
+
       })
   });
 
